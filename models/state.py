@@ -13,7 +13,7 @@ class State(BaseModel, Base):
     """ Creates the class: State
 
     Inherits from SQLAlchemy Base and links to states table
-    
+
     Attributes:
         __tablename__ (str): The name of the table to use.
         name (sqlalchemy String): The name of the State.

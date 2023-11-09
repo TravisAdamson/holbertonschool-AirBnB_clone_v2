@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" DBStorage Module for HBNB project 
+""" DBStorage Module for HBNB project
 This code was created entirely during this project. """
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
