@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Initializes an initial flask web app 
+""" Initializes an initial flask web app
 
 Listen: 0.0.0.0, port 5000
 Route:
@@ -8,6 +8,7 @@ Route:
 from flask import Flask
 
 app = Flask(__name__)
+
 
 @app.route('/', strict_slashes=False)
 def hello():
