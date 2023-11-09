@@ -41,12 +41,11 @@ def python(text='is cool'):
     return "Python {}".format(new_text)
 
 
-@app.route('/number/<n>', strict_slashes=False)
+@app.route('/number/<int:n>', strict_slashes=False)
 def number(n):
     """ Checks if n is a an int, 
     then displays 'n is a number' if it is """
-    if type(n) is int:
-        return "{} is a number".format(n)
+    return "{} is a number".format(n)
 
 
 if __name__ == '__main__':
