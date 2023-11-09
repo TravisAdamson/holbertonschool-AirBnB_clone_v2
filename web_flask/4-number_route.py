@@ -43,7 +43,7 @@ def python(text='is cool'):
 
 @app.route('/number/<int:n>', strict_slashes=False)
 def number(n):
-    """ Checks if n is a an int, 
+    """ Checks if n is a an int,
     then displays 'n is a number' if it is """
     return "{} is a number".format(n)
 
