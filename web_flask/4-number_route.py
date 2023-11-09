@@ -1,0 +1,53 @@
+#!/usr/bin/python3
+""" Initializes an initial flask web app
+
+Listen: 0.0.0.0, port 5000
+Route:
+    /: Display 'Hello HBNB!'
+    /hbnb: Display 'HBNB'
+    /c/<text>: Diplay 'c ' followed by value of text
+    /python/<text>: Display Python + text, with default
+    /number/<n>: If n is int, display <n> is a number
+"""
+from flask import Flask
+
+app = Flask(__name__)
+
+
+@app.route('/', strict_slashes=False)
+def hello():
+    """ Display 'Hello HBNB!' """
+    return 'Hello HBNB!'
+
+
+@app.route('/hbnb', strict_slashes=False)
+def hello_bnb():
+    """ Displays only 'HBNB' """
+    return 'HBNB'
+
+
+@app.route('/c/<text>', strict_slashes=False)
+def c(text):
+    """ Display c + value of text """
+    new_text = text.replace('_', " ")
+    return "C {}".format(new_text)
+
+
+@app.route('/python', strict_slashes=False)
+@app.route('/python/<text>', strict_slashes=False)
+def python(text='is cool'):
+    """ Display python + value of text """
+    new_text = text.replace('_', " ")
+    return "Python {}".format(new_text)
+
+
+@app.route('/number/<n>', strict_slashes=False)
+def number(n):
+    """ Checks if n is a an int, 
+    then displays 'n is a number' if it is """
+    if type(n) is int:
+        return "{} is a number".format(n)
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0')
