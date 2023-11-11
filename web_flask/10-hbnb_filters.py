@@ -9,6 +9,7 @@ from models import storage
 from flask import Flask
 from flask import render_template
 
+
 app = Flask(__name__)
 
 
@@ -16,7 +17,7 @@ app = Flask(__name__)
 def hbnb_filters():
     """ Display an HTML page listing data existing in storage """
     states = storage.all('State')
-    amenities = storage.al('Amenity')
+    amenities = storage.all('Amenity')
     return render_template("10-hbnb_filters.html",
                            states=states, amenities=amenities)
 
